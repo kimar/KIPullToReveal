@@ -16,6 +16,7 @@
 
 @interface PullToRevealViewController : UITableViewController
 @property (nonatomic, weak) id <PullToRevealDelegate> pullToRevealDelegate;
+@property (nonatomic, assign) BOOL centerUserLocation;
 @end
 
 

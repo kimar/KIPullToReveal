@@ -19,11 +19,15 @@
     UITextField *searchTextField;
     
     __weak id <PullToRevealDelegate> pullToRevealDelegate;
+    
+    @public
+    BOOL centerUserLocation;
 }
 @end
 
 @implementation PullToRevealViewController
 @synthesize pullToRevealDelegate;
+@synthesize centerUserLocation;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -55,6 +59,13 @@
     mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, kMapViewHeight*-1, self.tableView.bounds.size.width, kMapViewHeight)];
     [mapView setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
     [mapView setShowsUserLocation:YES];
+    
+    if(centerUserLocation)
+    {
+        [self centerUserLocation];
+        [self zoomToUserLocation];
+    }
+        
     [self.tableView insertSubview:mapView aboveSubview:self.tableView];
 }
 
@@ -70,6 +81,20 @@
     [searchTextField setDelegate:self];
     [toolbar addSubview:searchTextField];
     [self.tableView insertSubview:toolbar aboveSubview:self.tableView];
+}
+
+- (void) centerToUserLocation
+{
+    [mapView setCenterCoordinate:mapView.userLocation.coordinate animated:YES];
+}
+
+- (void) zoomToUserLocation
+{
+    MKCoordinateRegion mapRegion;
+    mapRegion.center = mapView.userLocation.coordinate;
+    mapRegion.span.latitudeDelta = 0.2;
+    mapRegion.span.longitudeDelta = 0.2;
+    [mapView setRegion:mapRegion animated: YES];
 }
 
 #pragma mark - ScrollView Delegate
@@ -97,6 +122,13 @@
              [mapView setFrame:
               CGRectMake(0, kMapViewHeight*-1, self.tableView.bounds.size.width, kMapViewHeight)
               ];
+             
+             if(centerUserLocation)
+             {
+                 [self centerUserLocation];
+                 [self zoomToUserLocation];
+             }
+             
              [self.tableView scrollsToTop];
          }];
     }
@@ -117,6 +149,12 @@
         [toolbar setFrame:CGRectMake(0, -50, self.tableView.bounds.size.width, 50)];
         [self.tableView insertSubview:toolbar aboveSubview:self.tableView];
     }
+    
+    if(centerUserLocation)
+    {
+        [self centerUserLocation];
+        [self zoomToUserLocation];
+    }
 }
 
 #pragma mark - TextField Delegate
@@ -129,6 +167,13 @@
          [mapView setFrame:
           CGRectMake(0, kMapViewHeight*-1, self.tableView.bounds.size.width, kMapViewHeight)
           ];
+         
+         if(centerUserLocation)
+         {
+             [self centerUserLocation];
+             [self zoomToUserLocation];
+         }
+         
          [self.tableView scrollsToTop];
      }];
     [textField becomeFirstResponder];
