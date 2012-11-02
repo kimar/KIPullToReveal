@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  PullToReveal
 //
-//  Created by Marcus Kida w!w on 02.11.12.
+//  Created by Marcus Kida on 02.11.12.
 //  Copyright (c) 2012 Marcus Kida. All rights reserved.
 //
 

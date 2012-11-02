@@ -18,6 +18,8 @@
 		BEFC1B081643F81F00EA2194 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEFC1B071643F81F00EA2194 /* Default-568h@2x.png */; };
 		BEFC1B0B1643F81F00EA2194 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFC1B0A1643F81F00EA2194 /* ViewController.m */; };
 		BEFC1B0E1643F81F00EA2194 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEFC1B0C1643F81F00EA2194 /* ViewController.xib */; };
+		BEFC1B181643F84D00EA2194 /* PullToRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFC1B161643F84D00EA2194 /* PullToRevealViewController.m */; };
+		BEFC1B1B1643F8BD00EA2194 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFC1B1A1643F8BD00EA2194 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,9 @@
 		BEFC1B091643F81F00EA2194 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		BEFC1B0A1643F81F00EA2194 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BEFC1B0D1643F81F00EA2194 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		BEFC1B151643F84D00EA2194 /* PullToRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullToRevealViewController.h; sourceTree = "<group>"; };
+		BEFC1B161643F84D00EA2194 /* PullToRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullToRevealViewController.m; sourceTree = "<group>"; };
+		BEFC1B1A1643F8BD00EA2194 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEFC1B1B1643F8BD00EA2194 /* MapKit.framework in Frameworks */,
 				BEFC1AF21643F81F00EA2194 /* UIKit.framework in Frameworks */,
 				BEFC1AF41643F81F00EA2194 /* Foundation.framework in Frameworks */,
 				BEFC1AF61643F81F00EA2194 /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +79,7 @@
 		BEFC1AF01643F81F00EA2194 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BEFC1B1A1643F8BD00EA2194 /* MapKit.framework */,
 				BEFC1AF11643F81F00EA2194 /* UIKit.framework */,
 				BEFC1AF31643F81F00EA2194 /* Foundation.framework */,
 				BEFC1AF51643F81F00EA2194 /* CoreGraphics.framework */,
@@ -83,6 +90,7 @@
 		BEFC1AF71643F81F00EA2194 /* PullToReveal */ = {
 			isa = PBXGroup;
 			children = (
+				BEFC1B141643F84000EA2194 /* PullToReveal */,
 				BEFC1B001643F81F00EA2194 /* AppDelegate.h */,
 				BEFC1B011643F81F00EA2194 /* AppDelegate.m */,
 				BEFC1B091643F81F00EA2194 /* ViewController.h */,
@@ -105,6 +113,15 @@
 				BEFC1B071643F81F00EA2194 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BEFC1B141643F84000EA2194 /* PullToReveal */ = {
+			isa = PBXGroup;
+			children = (
+				BEFC1B151643F84D00EA2194 /* PullToRevealViewController.h */,
+				BEFC1B161643F84D00EA2194 /* PullToRevealViewController.m */,
+			);
+			path = PullToReveal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +193,7 @@
 				BEFC1AFE1643F81F00EA2194 /* main.m in Sources */,
 				BEFC1B021643F81F00EA2194 /* AppDelegate.m in Sources */,
 				BEFC1B0B1643F81F00EA2194 /* ViewController.m in Sources */,
+				BEFC1B181643F84D00EA2194 /* PullToRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,7 +241,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -243,7 +261,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -291,6 +309,7 @@
 				BEFC1B131643F81F00EA2194 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
