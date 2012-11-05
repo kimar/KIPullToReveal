@@ -7,7 +7,6 @@
 //
 
 #define kTableViewContentInsetX     200.0f
-#define kMapViewHeight              650.0f
 #define kAnimationDuration          0.5f
 
 #import "PullToRevealViewController.h"
@@ -58,9 +57,10 @@
 - (void) initializeMapView
 {
     [self.tableView setContentInset:UIEdgeInsetsMake(kTableViewContentInsetX,0,0,0)];
-    mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, kMapViewHeight*-1, self.tableView.bounds.size.width, kMapViewHeight)];
+    mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, self.tableView.contentInset.top*-1, self.tableView.bounds.size.width, self.tableView.contentInset.top)];
     [mapView setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
     [mapView setShowsUserLocation:YES];
+    [mapView setUserInteractionEnabled:NO];
     
     if(centerUserLocation)
     {
@@ -108,34 +108,28 @@
 
     if(contentOffset < kTableViewContentInsetX*-1)
     {
-        [UIView animateWithDuration:kAnimationDuration
-                         animations:^()
-         {
-             [self.tableView setContentInset:UIEdgeInsetsMake(self.tableView.bounds.size.height,0,0,0)];
-             [mapView setFrame:
-              CGRectMake(0, self.tableView.bounds.size.height*-1, self.tableView.bounds.size.width, self.tableView.bounds.size.height)
-              ];
-             [self.tableView scrollsToTop];
-         }];
+        [self.tableView setContentInset:UIEdgeInsetsMake(self.tableView.bounds.size.height,0,0,0)];
+        [mapView setFrame:
+         CGRectMake(0, self.tableView.bounds.size.height*-1, self.tableView.bounds.size.width, self.tableView.bounds.size.height)
+         ];
+        [mapView setUserInteractionEnabled:YES];
+        [self.tableView scrollsToTop];
     }
     else if (contentOffset >= kTableViewContentInsetX*-1)
     {
-        [UIView animateWithDuration:kAnimationDuration
-                         animations:^()
-         {
-             [self.tableView setContentInset:UIEdgeInsetsMake(kTableViewContentInsetX,0,0,0)];
-             [mapView setFrame:
-              CGRectMake(0, kMapViewHeight*-1, self.tableView.bounds.size.width, kMapViewHeight)
-              ];
-             
-             if(centerUserLocation)
-             {
-                 [self centerToUserLocation];
-                 [self zoomToUserLocation];
-             }
-             
-             [self.tableView scrollsToTop];
-         }];
+        [self.tableView setContentInset:UIEdgeInsetsMake(kTableViewContentInsetX,0,0,0)];
+        [mapView setFrame:
+         CGRectMake(0, self.tableView.contentInset.top*-1, self.tableView.bounds.size.width, self.tableView.contentInset.top)
+         ];
+        [mapView setUserInteractionEnabled:NO];
+        
+        if(centerUserLocation)
+        {
+            [self centerToUserLocation];
+            [self zoomToUserLocation];
+        }
+        
+        [self.tableView scrollsToTop];
     }
 }
 
@@ -150,24 +144,21 @@
 
     if (!scrollViewIsDraggedDownwards)
     {
-        [UIView animateWithDuration:kAnimationDuration
-                         animations:^()
-         {
-             [self.tableView setContentInset:UIEdgeInsetsMake(kTableViewContentInsetX,0,0,0)];
-             [mapView setFrame:
-              CGRectMake(0, kMapViewHeight*-1, self.tableView.bounds.size.width, kMapViewHeight)
-              ];
-             
-             if(centerUserLocation)
-             {
-                 [self centerToUserLocation];
-                 [self zoomToUserLocation];
-             }
-             
-             [self.tableView scrollsToTop];
-         }];
+        [self.tableView setContentInset:UIEdgeInsetsMake(kTableViewContentInsetX,0,0,0)];
+        [mapView setFrame:
+         CGRectMake(0, self.tableView.contentInset.top*-1, self.tableView.bounds.size.width, self.tableView.contentInset.top)
+         ];
+        [mapView setUserInteractionEnabled:NO];
+        
+        if(centerUserLocation)
+        {
+            [self centerToUserLocation];
+            [self zoomToUserLocation];
+        }
+        
+        [self.tableView scrollsToTop];
     }
-    
+
     if(contentOffset >= -50)
     {
         [toolbar removeFromSuperview];
@@ -179,13 +170,19 @@
         [toolbar removeFromSuperview];
         [toolbar setFrame:CGRectMake(0, -50, self.tableView.bounds.size.width, 50)];
         [self.tableView insertSubview:toolbar aboveSubview:self.tableView];
+        
+        // Resize map to viewable size
+        [mapView setFrame:
+         CGRectMake(0, self.tableView.bounds.origin.y, self.tableView.bounds.size.width, contentOffset*-1)
+         ];
     }
-    
+     
     if(centerUserLocation)
     {
         [self centerToUserLocation];
         [self zoomToUserLocation];
     }
+    
 }
 
 #pragma mark - TextField Delegate
@@ -206,8 +203,9 @@
      {
          [self.tableView setContentInset:UIEdgeInsetsMake(kTableViewContentInsetX+50,0,0,0)];
          [mapView setFrame:
-          CGRectMake(0, kMapViewHeight*-1, self.tableView.bounds.size.width, kMapViewHeight)
+          CGRectMake(0, self.tableView.contentInset.top*-1, self.tableView.bounds.size.width, self.tableView.contentInset.top)
           ];
+         [mapView setUserInteractionEnabled:NO];
          
          if(centerUserLocation)
          {
