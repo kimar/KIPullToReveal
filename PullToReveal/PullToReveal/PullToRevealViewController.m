@@ -62,7 +62,7 @@
     
     if(centerUserLocation)
     {
-        [self centerUserLocation];
+        [self centerToUserLocation];
         [self zoomToUserLocation];
     }
         
@@ -125,7 +125,7 @@
              
              if(centerUserLocation)
              {
-                 [self centerUserLocation];
+                 [self centerToUserLocation];
                  [self zoomToUserLocation];
              }
              
@@ -152,7 +152,7 @@
     
     if(centerUserLocation)
     {
-        [self centerUserLocation];
+        [self centerToUserLocation];
         [self zoomToUserLocation];
     }
 }
@@ -170,7 +170,7 @@
          
          if(centerUserLocation)
          {
-             [self centerUserLocation];
+             [self centerToUserLocation];
              [self zoomToUserLocation];
          }
          
