@@ -199,7 +199,6 @@
         [self zoomToUserLocation];
         [self displayMapViewAnnotationsForTableViewCells];
     }
-    
 }
 
 #pragma mark - TextField Delegate

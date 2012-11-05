@@ -22,6 +22,8 @@
 {
     [super viewDidLoad];
     self.pullToRevealDelegate = self;
+    self.centerUserLocation = NO;
+    
 	// Do any additional setup after loading the view, typically from a nib.
     
     aLatitudes = [[NSArray alloc] initWithObjects:
