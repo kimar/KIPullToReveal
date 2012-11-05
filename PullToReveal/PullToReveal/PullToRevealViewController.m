@@ -14,13 +14,15 @@
 
 @interface PullToRevealViewController () <UIScrollViewDelegate, UITextFieldDelegate>
 {
+    @private
     MKMapView *mapView;
     UIToolbar *toolbar;
     UITextField *searchTextField;
-    
-    __weak id <PullToRevealDelegate> pullToRevealDelegate;
+    BOOL scrollViewIsDraggedDownwards;
+    double lastDragOffset;
     
     @public
+    __weak id <PullToRevealDelegate> pullToRevealDelegate;
     BOOL centerUserLocation;
 }
 @end
@@ -78,6 +80,7 @@
     [searchTextField setBorderStyle:UITextBorderStyleRoundedRect];
     [searchTextField setReturnKeyType:UIReturnKeySearch];
     [searchTextField setClearButtonMode:UITextFieldViewModeWhileEditing];
+    [searchTextField addTarget:self action:@selector(searchTextFieldBecomeFirstResponder:) forControlEvents:UIControlEventEditingDidBegin];
     [searchTextField setDelegate:self];
     [toolbar addSubview:searchTextField];
     [self.tableView insertSubview:toolbar aboveSubview:self.tableView];
@@ -101,6 +104,8 @@
 - (void) scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     double contentOffset = scrollView.contentOffset.y;
+    lastDragOffset = contentOffset;
+
     if(contentOffset < kTableViewContentInsetX*-1)
     {
         [UIView animateWithDuration:kAnimationDuration
@@ -137,6 +142,32 @@
 - (void) scrollViewDidScroll:(UIScrollView *)scrollView
 {
     double contentOffset = scrollView.contentOffset.y;
+    
+    if (contentOffset < lastDragOffset)
+        scrollViewIsDraggedDownwards = YES;
+    else
+        scrollViewIsDraggedDownwards = NO;
+
+    if (!scrollViewIsDraggedDownwards)
+    {
+        [UIView animateWithDuration:kAnimationDuration
+                         animations:^()
+         {
+             [self.tableView setContentInset:UIEdgeInsetsMake(kTableViewContentInsetX,0,0,0)];
+             [mapView setFrame:
+              CGRectMake(0, kMapViewHeight*-1, self.tableView.bounds.size.width, kMapViewHeight)
+              ];
+             
+             if(centerUserLocation)
+             {
+                 [self centerToUserLocation];
+                 [self zoomToUserLocation];
+             }
+             
+             [self.tableView scrollsToTop];
+         }];
+    }
+    
     if(contentOffset >= -50)
     {
         [toolbar removeFromSuperview];
@@ -158,7 +189,17 @@
 }
 
 #pragma mark - TextField Delegate
-- (void) textFieldDidBeginEditing:(UITextField *)textField
+- (BOOL) textFieldShouldReturn:(UITextField *)textField
+{
+    if(pullToRevealDelegate && [pullToRevealDelegate respondsToSelector:@selector(PullToRevealDidSearchFor:)])
+        [[self pullToRevealDelegate] PullToRevealDidSearchFor:textField.text];
+    
+    [searchTextField resignFirstResponder];
+    return YES;
+}
+
+#pragma mark - SearchTextField
+- (void) searchTextFieldBecomeFirstResponder: (id)sender
 {
     [UIView animateWithDuration:kAnimationDuration
                      animations:^()
@@ -176,16 +217,6 @@
          
          [self.tableView scrollsToTop];
      }];
-    [textField becomeFirstResponder];
+    [searchTextField becomeFirstResponder];
 }
-
-- (BOOL) textFieldShouldReturn:(UITextField *)textField
-{
-    if(pullToRevealDelegate && [pullToRevealDelegate respondsToSelector:@selector(PullToRevealDidSearchFor:)])
-        [[self pullToRevealDelegate] PullToRevealDidSearchFor:textField.text];
-    
-    [textField resignFirstResponder];
-    return YES;
-}
-
 @end
