@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE1E46811647CD29007BDCB2 /* PullToRevealCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1E46801647CD29007BDCB2 /* PullToRevealCell.m */; };
+		BE1E46831647CFE7007BDCB2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1E46821647CFE7007BDCB2 /* CoreLocation.framework */; };
+		BE1E46851647E7A8007BDCB2 /* PullToRevealCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE1E46841647E7A8007BDCB2 /* PullToRevealCell.xib */; };
 		BEFC1AF21643F81F00EA2194 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFC1AF11643F81F00EA2194 /* UIKit.framework */; };
 		BEFC1AF41643F81F00EA2194 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFC1AF31643F81F00EA2194 /* Foundation.framework */; };
 		BEFC1AF61643F81F00EA2194 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFC1AF51643F81F00EA2194 /* CoreGraphics.framework */; };
@@ -23,6 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE1E467F1647CD29007BDCB2 /* PullToRevealCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullToRevealCell.h; sourceTree = "<group>"; };
+		BE1E46801647CD29007BDCB2 /* PullToRevealCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullToRevealCell.m; sourceTree = "<group>"; };
+		BE1E46821647CFE7007BDCB2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BE1E46841647E7A8007BDCB2 /* PullToRevealCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PullToRevealCell.xib; sourceTree = "<group>"; };
 		BEFC1AED1643F81F00EA2194 /* PullToReveal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PullToReveal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEFC1AF11643F81F00EA2194 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BEFC1AF31643F81F00EA2194 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -49,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE1E46831647CFE7007BDCB2 /* CoreLocation.framework in Frameworks */,
 				BEFC1B1B1643F8BD00EA2194 /* MapKit.framework in Frameworks */,
 				BEFC1AF21643F81F00EA2194 /* UIKit.framework in Frameworks */,
 				BEFC1AF41643F81F00EA2194 /* Foundation.framework in Frameworks */,
@@ -79,6 +87,7 @@
 		BEFC1AF01643F81F00EA2194 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BE1E46821647CFE7007BDCB2 /* CoreLocation.framework */,
 				BEFC1B1A1643F8BD00EA2194 /* MapKit.framework */,
 				BEFC1AF11643F81F00EA2194 /* UIKit.framework */,
 				BEFC1AF31643F81F00EA2194 /* Foundation.framework */,
@@ -120,6 +129,9 @@
 			children = (
 				BEFC1B151643F84D00EA2194 /* PullToRevealViewController.h */,
 				BEFC1B161643F84D00EA2194 /* PullToRevealViewController.m */,
+				BE1E467F1647CD29007BDCB2 /* PullToRevealCell.h */,
+				BE1E46801647CD29007BDCB2 /* PullToRevealCell.m */,
+				BE1E46841647E7A8007BDCB2 /* PullToRevealCell.xib */,
 			);
 			path = PullToReveal;
 			sourceTree = "<group>";
@@ -180,6 +192,7 @@
 				BEFC1B061643F81F00EA2194 /* Default@2x.png in Resources */,
 				BEFC1B081643F81F00EA2194 /* Default-568h@2x.png in Resources */,
 				BEFC1B0E1643F81F00EA2194 /* ViewController.xib in Resources */,
+				BE1E46851647E7A8007BDCB2 /* PullToRevealCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +207,7 @@
 				BEFC1B021643F81F00EA2194 /* AppDelegate.m in Sources */,
 				BEFC1B0B1643F81F00EA2194 /* ViewController.m in Sources */,
 				BEFC1B181643F84D00EA2194 /* PullToRevealViewController.m in Sources */,
+				BE1E46811647CD29007BDCB2 /* PullToRevealCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

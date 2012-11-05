@@ -9,7 +9,11 @@
 #import "ViewController.h"
 
 @interface ViewController () <PullToRevealDelegate>
-
+{
+    NSArray *aLatitudes;
+    NSArray *aLongitudes;
+    NSArray *aTitles;
+}
 @end
 
 @implementation ViewController
@@ -19,6 +23,46 @@
     [super viewDidLoad];
     self.pullToRevealDelegate = self;
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    aLatitudes = [[NSArray alloc] initWithObjects:
+                  [NSNumber numberWithDouble:48.122101],
+                  [NSNumber numberWithDouble:48.222201],
+                  [NSNumber numberWithDouble:48.322301],
+                  [NSNumber numberWithDouble:48.422401],
+                  [NSNumber numberWithDouble:48.523101],
+                  [NSNumber numberWithDouble:48.623201],
+                  [NSNumber numberWithDouble:48.723301],
+                  [NSNumber numberWithDouble:48.823401],
+                  [NSNumber numberWithDouble:48.924101],
+                  [NSNumber numberWithDouble:49.025101]
+                  , nil];
+    
+    aLongitudes = [[NSArray alloc] initWithObjects:
+                   [NSNumber numberWithDouble:11.601563],
+                   [NSNumber numberWithDouble:11.701663],
+                   [NSNumber numberWithDouble:11.801763],
+                   [NSNumber numberWithDouble:11.901863],
+                   [NSNumber numberWithDouble:12.001963],
+                   [NSNumber numberWithDouble:12.101563],
+                   [NSNumber numberWithDouble:12.201663],
+                   [NSNumber numberWithDouble:12.301763],
+                   [NSNumber numberWithDouble:12.401863],
+                   [NSNumber numberWithDouble:12.501963],
+                   [NSNumber numberWithDouble:12.602563]
+                   , nil];
+    
+    aTitles = [[NSArray alloc] initWithObjects:
+               @"Apple Store",
+               @"Gravis",
+               @"FundK",
+               @"Aldi",
+               @"Lidl",
+               @"REWE",
+               @"Netto",
+               @"Saturn",
+               @"MediaMarkt",
+               @"Medimax"
+               , nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,18 +79,20 @@
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 50;
+    return [aTitles count];
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *stCellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:stCellIdentifier];
+    PullToRevealCell *cell = (PullToRevealCell *)[tableView dequeueReusableCellWithIdentifier:stCellIdentifier];
     
     if(!cell)
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:stCellIdentifier];
-    
-    cell.textLabel.text = [NSString stringWithFormat:@"Cell %d", indexPath.row];
+        cell = (PullToRevealCell *)[PullToRevealCell cellFromNibNamed:@"PullToRevealCell"];
+
+    cell.pointLocation = CLLocationCoordinate2DMake([[aLatitudes objectAtIndex:indexPath.row] doubleValue], [[aLongitudes objectAtIndex:indexPath.row] doubleValue]);
+    cell.titleLabel.text = [NSString stringWithFormat:@"%@", [aTitles objectAtIndex:indexPath.row]];
+    cell.distanceLabel.text = [NSString stringWithFormat:@"~ 0.0 km"];
     
     return cell;
 }
