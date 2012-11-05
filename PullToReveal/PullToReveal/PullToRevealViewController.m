@@ -108,20 +108,31 @@
 
     if(contentOffset < kTableViewContentInsetX*-1)
     {
-        [self.tableView setContentInset:UIEdgeInsetsMake(self.tableView.bounds.size.height,0,0,0)];
         [mapView setFrame:
          CGRectMake(0, self.tableView.bounds.size.height*-1, self.tableView.bounds.size.width, self.tableView.bounds.size.height)
          ];
         [mapView setUserInteractionEnabled:YES];
-        [self.tableView scrollsToTop];
+        
+        [UIView animateWithDuration:kAnimationDuration
+                         animations:^()
+         {
+             [self.tableView setContentInset:UIEdgeInsetsMake(self.tableView.bounds.size.height,0,0,0)];
+             [self.tableView scrollsToTop];
+         }];
     }
     else if (contentOffset >= kTableViewContentInsetX*-1)
     {
-        [self.tableView setContentInset:UIEdgeInsetsMake(kTableViewContentInsetX,0,0,0)];
         [mapView setFrame:
          CGRectMake(0, self.tableView.contentInset.top*-1, self.tableView.bounds.size.width, self.tableView.contentInset.top)
          ];
         [mapView setUserInteractionEnabled:NO];
+        
+        [UIView animateWithDuration:kAnimationDuration
+                         animations:^()
+         {
+             [self.tableView setContentInset:UIEdgeInsetsMake(kTableViewContentInsetX,0,0,0)];
+
+         }];
         
         if(centerUserLocation)
         {
@@ -144,19 +155,24 @@
 
     if (!scrollViewIsDraggedDownwards)
     {
-        [self.tableView setContentInset:UIEdgeInsetsMake(kTableViewContentInsetX,0,0,0)];
         [mapView setFrame:
          CGRectMake(0, self.tableView.contentInset.top*-1, self.tableView.bounds.size.width, self.tableView.contentInset.top)
          ];
         [mapView setUserInteractionEnabled:NO];
         
-        if(centerUserLocation)
+        [UIView animateWithDuration:kAnimationDuration
+                         animations:^()
         {
-            [self centerToUserLocation];
-            [self zoomToUserLocation];
-        }
-        
-        [self.tableView scrollsToTop];
+             [self.tableView setContentInset:UIEdgeInsetsMake(kTableViewContentInsetX,0,0,0)];
+             
+             if(centerUserLocation)
+             {
+                 [self centerToUserLocation];
+                 [self zoomToUserLocation];
+             }
+             
+             [self.tableView scrollsToTop];
+        }];
     }
 
     if(contentOffset >= -50)
