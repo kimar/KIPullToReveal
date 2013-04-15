@@ -205,7 +205,7 @@
 - (BOOL) textFieldShouldReturn:(UITextField *)textField
 {
     if(_pullToRevealDelegate && [_pullToRevealDelegate respondsToSelector:@selector(PullToRevealDidSearchFor:)])
-        [[self pullToRevealDelegate] PullToRevealDidSearchFor:textField.text];
+        [[self pullToRevealDelegate] pullToRevealDidSearchFor:textField.text];
     
     [_searchTextField resignFirstResponder];
     return YES;

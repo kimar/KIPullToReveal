@@ -14,7 +14,7 @@
 @protocol KIPullToRevealDelegate <NSObject>
 
 @optional
-- (void) PullToRevealDidSearchFor:(NSString *)searchText;
+- (void) pullToRevealDidSearchFor:(NSString *)searchText;
 
 @end
 
