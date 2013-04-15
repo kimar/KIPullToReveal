@@ -9,18 +9,18 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-#import "PullToRevealCell.h"
+#import "KIPullToRevealCell.h"
 
-@protocol PullToRevealDelegate <NSObject>
+@protocol KIPullToRevealDelegate <NSObject>
 
 @optional
 - (void) PullToRevealDidSearchFor:(NSString *)searchText;
 
 @end
 
-@interface PullToRevealViewController : UITableViewController
+@interface KIPullToRevealViewController : UITableViewController
 
-@property (nonatomic, weak) id <PullToRevealDelegate> pullToRevealDelegate;
+@property (nonatomic, weak) id <KIPullToRevealDelegate> pullToRevealDelegate;
 @property (nonatomic, assign) BOOL centerUserLocation;
 @property (nonatomic, retain) MKMapView *mapView;
 

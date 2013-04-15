@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController () <PullToRevealDelegate>
+@interface ViewController () <KIPullToRevealDelegate>
 {
     NSArray *aLatitudes;
     NSArray *aLongitudes;
@@ -87,10 +87,10 @@
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *stCellIdentifier = @"Cell";
-    PullToRevealCell *cell = (PullToRevealCell *)[tableView dequeueReusableCellWithIdentifier:stCellIdentifier];
+    KIPullToRevealCell *cell = (KIPullToRevealCell *)[tableView dequeueReusableCellWithIdentifier:stCellIdentifier];
     
     if(!cell)
-        cell = (PullToRevealCell *)[PullToRevealCell cellFromNibNamed:@"PullToRevealCell"];
+        cell = (KIPullToRevealCell *)[KIPullToRevealCell cellFromNibNamed:@"KIPullToRevealCell"];
 
     cell.pointLocation = CLLocationCoordinate2DMake([[aLatitudes objectAtIndex:indexPath.row] doubleValue], [[aLongitudes objectAtIndex:indexPath.row] doubleValue]);
     cell.titleLabel.text = [NSString stringWithFormat:@"%@", [aTitles objectAtIndex:indexPath.row]];

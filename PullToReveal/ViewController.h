@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PullToRevealViewController.h"
-#import "PullToRevealCell.h"
+#import "KIPullToRevealViewController.h"
+#import "KIPullToRevealCell.h"
 
-@interface ViewController : PullToRevealViewController
+@interface ViewController : KIPullToRevealViewController
 
 @end

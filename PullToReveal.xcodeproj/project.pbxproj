@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BE1E46811647CD29007BDCB2 /* PullToRevealCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1E46801647CD29007BDCB2 /* PullToRevealCell.m */; };
+		BE06220D171BFE5000166990 /* KIPullToRevealCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE062209171BFE5000166990 /* KIPullToRevealCell.m */; };
+		BE06220E171BFE5000166990 /* KIPullToRevealCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE06220A171BFE5000166990 /* KIPullToRevealCell.xib */; };
+		BE06220F171BFE5000166990 /* KIPullToRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE06220C171BFE5000166990 /* KIPullToRevealViewController.m */; };
 		BE1E46831647CFE7007BDCB2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1E46821647CFE7007BDCB2 /* CoreLocation.framework */; };
-		BE1E46851647E7A8007BDCB2 /* PullToRevealCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE1E46841647E7A8007BDCB2 /* PullToRevealCell.xib */; };
 		BEFC1AF21643F81F00EA2194 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFC1AF11643F81F00EA2194 /* UIKit.framework */; };
 		BEFC1AF41643F81F00EA2194 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFC1AF31643F81F00EA2194 /* Foundation.framework */; };
 		BEFC1AF61643F81F00EA2194 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFC1AF51643F81F00EA2194 /* CoreGraphics.framework */; };
@@ -21,15 +22,16 @@
 		BEFC1B081643F81F00EA2194 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEFC1B071643F81F00EA2194 /* Default-568h@2x.png */; };
 		BEFC1B0B1643F81F00EA2194 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFC1B0A1643F81F00EA2194 /* ViewController.m */; };
 		BEFC1B0E1643F81F00EA2194 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEFC1B0C1643F81F00EA2194 /* ViewController.xib */; };
-		BEFC1B181643F84D00EA2194 /* PullToRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFC1B161643F84D00EA2194 /* PullToRevealViewController.m */; };
 		BEFC1B1B1643F8BD00EA2194 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFC1B1A1643F8BD00EA2194 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BE1E467F1647CD29007BDCB2 /* PullToRevealCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullToRevealCell.h; sourceTree = "<group>"; };
-		BE1E46801647CD29007BDCB2 /* PullToRevealCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullToRevealCell.m; sourceTree = "<group>"; };
+		BE062208171BFE5000166990 /* KIPullToRevealCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIPullToRevealCell.h; sourceTree = "<group>"; };
+		BE062209171BFE5000166990 /* KIPullToRevealCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIPullToRevealCell.m; sourceTree = "<group>"; };
+		BE06220A171BFE5000166990 /* KIPullToRevealCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KIPullToRevealCell.xib; sourceTree = "<group>"; };
+		BE06220B171BFE5000166990 /* KIPullToRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIPullToRevealViewController.h; sourceTree = "<group>"; };
+		BE06220C171BFE5000166990 /* KIPullToRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIPullToRevealViewController.m; sourceTree = "<group>"; };
 		BE1E46821647CFE7007BDCB2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		BE1E46841647E7A8007BDCB2 /* PullToRevealCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PullToRevealCell.xib; sourceTree = "<group>"; };
 		BEFC1AED1643F81F00EA2194 /* PullToReveal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PullToReveal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEFC1AF11643F81F00EA2194 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BEFC1AF31643F81F00EA2194 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -46,8 +48,6 @@
 		BEFC1B091643F81F00EA2194 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		BEFC1B0A1643F81F00EA2194 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BEFC1B0D1643F81F00EA2194 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
-		BEFC1B151643F84D00EA2194 /* PullToRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullToRevealViewController.h; sourceTree = "<group>"; };
-		BEFC1B161643F84D00EA2194 /* PullToRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullToRevealViewController.m; sourceTree = "<group>"; };
 		BEFC1B1A1643F8BD00EA2194 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -67,6 +67,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE062207171BFE5000166990 /* KIPullToReveal */ = {
+			isa = PBXGroup;
+			children = (
+				BE062208171BFE5000166990 /* KIPullToRevealCell.h */,
+				BE062209171BFE5000166990 /* KIPullToRevealCell.m */,
+				BE06220A171BFE5000166990 /* KIPullToRevealCell.xib */,
+				BE06220B171BFE5000166990 /* KIPullToRevealViewController.h */,
+				BE06220C171BFE5000166990 /* KIPullToRevealViewController.m */,
+			);
+			path = KIPullToReveal;
+			sourceTree = "<group>";
+		};
 		BEFC1AE21643F81F00EA2194 = {
 			isa = PBXGroup;
 			children = (
@@ -99,7 +111,7 @@
 		BEFC1AF71643F81F00EA2194 /* PullToReveal */ = {
 			isa = PBXGroup;
 			children = (
-				BEFC1B141643F84000EA2194 /* PullToReveal */,
+				BE062207171BFE5000166990 /* KIPullToReveal */,
 				BEFC1B001643F81F00EA2194 /* AppDelegate.h */,
 				BEFC1B011643F81F00EA2194 /* AppDelegate.m */,
 				BEFC1B091643F81F00EA2194 /* ViewController.h */,
@@ -122,18 +134,6 @@
 				BEFC1B071643F81F00EA2194 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		BEFC1B141643F84000EA2194 /* PullToReveal */ = {
-			isa = PBXGroup;
-			children = (
-				BEFC1B151643F84D00EA2194 /* PullToRevealViewController.h */,
-				BEFC1B161643F84D00EA2194 /* PullToRevealViewController.m */,
-				BE1E467F1647CD29007BDCB2 /* PullToRevealCell.h */,
-				BE1E46801647CD29007BDCB2 /* PullToRevealCell.m */,
-				BE1E46841647E7A8007BDCB2 /* PullToRevealCell.xib */,
-			);
-			path = PullToReveal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +162,7 @@
 		BEFC1AE41643F81F00EA2194 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = KI;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Marcus Kida";
 			};
@@ -192,7 +193,7 @@
 				BEFC1B061643F81F00EA2194 /* Default@2x.png in Resources */,
 				BEFC1B081643F81F00EA2194 /* Default-568h@2x.png in Resources */,
 				BEFC1B0E1643F81F00EA2194 /* ViewController.xib in Resources */,
-				BE1E46851647E7A8007BDCB2 /* PullToRevealCell.xib in Resources */,
+				BE06220E171BFE5000166990 /* KIPullToRevealCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,8 +207,8 @@
 				BEFC1AFE1643F81F00EA2194 /* main.m in Sources */,
 				BEFC1B021643F81F00EA2194 /* AppDelegate.m in Sources */,
 				BEFC1B0B1643F81F00EA2194 /* ViewController.m in Sources */,
-				BEFC1B181643F84D00EA2194 /* PullToRevealViewController.m in Sources */,
-				BE1E46811647CD29007BDCB2 /* PullToRevealCell.m in Sources */,
+				BE06220D171BFE5000166990 /* KIPullToRevealCell.m in Sources */,
+				BE06220F171BFE5000166990 /* KIPullToRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,24 +6,24 @@
 //  Copyright (c) 2012 Marcus Kida. All rights reserved.
 //
 
-#import "PullToRevealCell.h"
+#import "KIPullToRevealCell.h"
 
-@interface PullToRevealCell ()
+@interface KIPullToRevealCell ()
 {
     @public
-    CLLocationCoordinate2D pointLocation;
-    IBOutlet UIImageView *iconImageView;
-    IBOutlet UILabel *titleLabel;
-    IBOutlet UILabel *distanceLabel;
+    CLLocationCoordinate2D _pointLocation;
+    IBOutlet UIImageView *_iconImageView;
+    IBOutlet UILabel *_titleLabel;
+    IBOutlet UILabel *_distanceLabel;
 }
 @end
 
-@implementation PullToRevealCell
+@implementation KIPullToRevealCell
 
-@synthesize pointLocation;
-@synthesize iconImageView;
-@synthesize titleLabel;
-@synthesize distanceLabel;
+@synthesize pointLocation = _pointLocation;
+@synthesize iconImageView = _iconImageView;
+@synthesize titleLabel = _titleLabel;
+@synthesize distanceLabel = _distanceLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -34,17 +34,17 @@
     return self;
 }
 
-+ (PullToRevealCell *)cellFromNibNamed:(NSString *)nibName
++ (KIPullToRevealCell *)cellFromNibNamed:(NSString *)nibName
 {
     NSArray *nibContents = [[NSBundle mainBundle] loadNibNamed:nibName owner:self options:NULL];
     NSEnumerator *nibEnumerator = [nibContents objectEnumerator];
-    PullToRevealCell *customCell = nil;
+    KIPullToRevealCell *customCell = nil;
     NSObject* nibItem = nil;
     while ((nibItem = [nibEnumerator nextObject]) != nil)
     {
-        if ([nibItem isKindOfClass:[PullToRevealCell class]])
+        if ([nibItem isKindOfClass:[KIPullToRevealCell class]])
         {
-            customCell = (PullToRevealCell *)nibItem;
+            customCell = (KIPullToRevealCell *)nibItem;
             break;
         }
     }
