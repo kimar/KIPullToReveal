@@ -90,7 +90,7 @@
     KIPullToRevealCell *cell = (KIPullToRevealCell *)[tableView dequeueReusableCellWithIdentifier:stCellIdentifier];
     
     if(!cell)
-        cell = (KIPullToRevealCell *)[KIPullToRevealCell cellFromNibNamed:@"KIPullToRevealCell"];
+        cell = (KIPullToRevealCell *)[KIPullToRevealCell cellFromNibNamed:NSStringFromClass([KIPullToRevealCell class])];
 
     cell.pointLocation = CLLocationCoordinate2DMake([[aLatitudes objectAtIndex:indexPath.row] doubleValue], [[aLongitudes objectAtIndex:indexPath.row] doubleValue]);
     cell.titleLabel.text = [NSString stringWithFormat:@"%@", [aTitles objectAtIndex:indexPath.row]];
