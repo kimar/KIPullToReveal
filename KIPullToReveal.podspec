@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/kimar/KIPullToReveal.git", :commit => 'efabe20b2bd4f934ce7a4593400c1b9943bf173f' }
   s.platform = :ios, '5.0'
 
-  s.source_files = 'PullToReveal/KIPulToReveal/*.{h,m,xib}'
+  s.source_files = 'PullToReveal/KIPullToReveal/*.{h,m,xib}'
 
   s.requires_arc = true
 end
