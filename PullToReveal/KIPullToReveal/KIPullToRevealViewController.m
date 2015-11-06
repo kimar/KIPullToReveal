@@ -204,7 +204,7 @@
 #pragma mark - TextField Delegate
 - (BOOL) textFieldShouldReturn:(UITextField *)textField
 {
-    if(_pullToRevealDelegate && [_pullToRevealDelegate respondsToSelector:@selector(PullToRevealDidSearchFor:)])
+    if(_pullToRevealDelegate && [_pullToRevealDelegate respondsToSelector:@selector(pullToRevealDidSearchFor:)])
         [[self pullToRevealDelegate] pullToRevealDidSearchFor:textField.text];
     
     [_searchTextField resignFirstResponder];
