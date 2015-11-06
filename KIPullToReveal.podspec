@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "KIPullToReveal"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "This UITableViewController is used to combine a search result's UITableView with a MKMapView."
   s.homepage     = "https://github.com/kimar/KIPullToReveal"
   s.license      = 'MIT'
