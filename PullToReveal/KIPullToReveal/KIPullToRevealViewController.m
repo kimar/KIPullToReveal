@@ -236,9 +236,7 @@
 #pragma mark - MapView
 - (void) displayMapViewAnnotationsForTableViewCells
 {
-    NSLog(@"displayMapViewAnnotationsForTableViewCells");
     // ATM this is only working for one section !!!
-    NSLog(@"self.tableView numberOfRowsInSection:0] = %d", [self.tableView numberOfRowsInSection:0]);
     [_mapView removeAnnotations:_mapView.annotations];
     for (int i = 0; i < [self.tableView numberOfRowsInSection:0]; i++)
     {
@@ -247,7 +245,6 @@
            (cell.pointLocation.latitude != 0.0f && cell.pointLocation.longitude != 0.0f)
            )
         {
-            NSLog(@"cell.pointLocation.latitude = %f", cell.pointLocation.latitude);
             MKPointAnnotation *annotationPoint = [[MKPointAnnotation alloc] init];
             annotationPoint.coordinate = cell.pointLocation;
             annotationPoint.title = cell.titleLabel.text;
