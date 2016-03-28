@@ -1,5 +1,6 @@
-KIPullToReveal
-============
+# KIPullToReveal
+
+[![Twitter: @Kidmar](https://img.shields.io/badge/contact-@Kidmar-blue.svg?style=flat)](https://twitter.com/Kidmar)
 
 Combine a search result's UITableView with a MKMapView.
 
@@ -11,6 +12,6 @@ Feel free to fork and use this controller, if you make any changes useful for ot
 
 Have a nice day!
 
-![Screenshot 1](http://kimar.github.io/screenshots/kipulltoreveal/1.png)
-![Screenshot 2](http://kimar.github.io/screenshots/kipulltoreveal/2.png)
-![Screenshot 3](http://kimar.github.io/screenshots/kipulltoreveal/3.png)
+![Screenshot 1](https://github.com/kimar/blog.kida.io/tree/master/screenshots/kipulltoreveal/1.png)
+![Screenshot 2](https://github.com/kimar/blog.kida.io/tree/master/screenshots/kipulltoreveal/2.png)
+![Screenshot 3](https://github.com/kimar/blog.kida.io/tree/master/screenshots/kipulltoreveal/3.png)
