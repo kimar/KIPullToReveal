@@ -12,6 +12,6 @@ Feel free to fork and use this controller, if you make any changes useful for ot
 
 Have a nice day!
 
-![Screenshot 1](https://github.com/kimar/blog.kida.io/tree/master/screenshots/kipulltoreveal/1.png)
-![Screenshot 2](https://github.com/kimar/blog.kida.io/tree/master/screenshots/kipulltoreveal/2.png)
-![Screenshot 3](https://github.com/kimar/blog.kida.io/tree/master/screenshots/kipulltoreveal/3.png)
+![Screenshot 1](https://raw.githubusercontent.com/kimar/blog.kida.io/master/screenshots/kipulltoreveal/1.png)
+![Screenshot 2](https://raw.githubusercontent.com/kimar/blog.kida.io/master/screenshots/kipulltoreveal/2.png)
+![Screenshot 3](https://raw.githubusercontent.com/kimar/blog.kida.io/master/screenshots/kipulltoreveal/3.png)
